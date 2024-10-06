@@ -4,7 +4,7 @@ session_start();
 $nama = $_SESSION['nama_su'];
 if(!isset($_SESSION['email_su'])){
 	header("location:../../index.php?pesan=login");
-	exit; // Tambahkan perintah exit setelah melakukan redirect
+	exit; 
 }
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ if(!isset($_SESSION['email_su'])){
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../../css/style.css"> 
     <link rel="stylesheet" type="text/css" href="../../js/jquery-ui/jquery-ui.css">
-    <!-- Hapus satu dari dua pemanggilan jQuery -->
+   
     <script type="text/javascript" src="../../js/jquery.js"></script>
     <script type="text/javascript" src="../../js/bootstrap.js"></script>
     <script type="text/javascript" src="../../js/jquery-ui/jquery-ui.js"></script>
@@ -25,7 +25,7 @@ if(!isset($_SESSION['email_su'])){
     <a href="index.php">kedai<b>ku</b>.com</a>
     </div>
     <div class="hdkanan">
-    <form action="search.php" method="GET"> <!-- Tambahkan action untuk menentukan aksi form -->
+    <form action="search.php" method="GET"> 
         <input type="text" name="cari" placeholder="cari buku yang anda inginkan disini.." class="cari">
         <input type="submit" name="search" value="cari" class="tombolcari">
     </form>
