@@ -4,7 +4,7 @@ session_start();
 $nama = $_SESSION['nama_su'];
 if(!isset($_SESSION['email_su'])){
 	header("location:../../index.php?pesan=login");
-	exit; // tambahin perintah exit setelah melakukan redirect 
+	exit; // tambahin ini perintah exit setelah melakukan redirect 
 }
 ?>
 <!DOCTYPE html>
