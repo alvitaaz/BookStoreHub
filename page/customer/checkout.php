@@ -1,7 +1,7 @@
 <?php
 include "../../db.php";
 
-// Mulai sesi jika belum dimulai
+// mulai sesi
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
