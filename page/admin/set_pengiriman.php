@@ -11,25 +11,24 @@ if($set=="tanggal") {
   $query_status_kirim = mysqli_query($conn, "SELECT * FROM selesai where status_pengiriman='$status_kirim'");
 }
 
-// Includekan fungsi paginasi
 include 'pagination1.php';
 
 // Query
 $sql = "SELECT * FROM selesai";
 $result = mysqli_query($conn, $sql);
 
-// Pastikan $result tidak null sebelum mengaksesnya
+// mastiin $result ga null sebelum ngakses
 if (!$result) {
     die("Error: " . mysqli_error($conn));
 }
 
-// Pagination config start
-$rpp = 10; // Jumlah record per halaman
+// pagination config start
+$rpp = 10; // jumlah record per halaman
 $reload = "transaksi.php?page=&pagination=true";
 @$page = intval($_GET["page"]);
 if($page <= 0) $page = 1;  
 $tcount = mysqli_num_rows($result);
-$tpages = ($tcount) ? ceil($tcount/$rpp) : 1; // Total pages, last page number
+$tpages = ($tcount) ? ceil($tcount/$rpp) : 1; // total pages, last page number
 $count = 0;
 $i = ($page-1) * $rpp;
 $no_urut = ($page-1) * $rpp;
@@ -124,17 +123,17 @@ $no_urut = ($page-1) * $rpp;
 </div>
 <div><?php echo paginate_one($reload, $page, $tpages); ?></div>
 
-<!-- Modal Popup untuk Edit--> 
+<!-- Popup buat Edit--> 
 <div id="ModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
 </div>
 
-<!-- Modal Popup untuk Alamat Pengiriman--> 
+<!-- Popup buat Alamat Pengiriman--> 
 <div id="alamat" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
 </div>
 
-<!-- Modal Popup untuk delete--> 
+<!-- Popup buat delete--> 
 <div class="modal fade" id="modal_delete">
     <div class="modal-dialog">
         <div class="modal-content" style="margin-top:100px;">
@@ -151,7 +150,7 @@ $no_urut = ($page-1) * $rpp;
     </div>
 </div>
 
-<!-- Javascript untuk popup modal edit transaksi--> 
+<!-- javascrip tbuat popup edit transaksi--> 
 <script type="text/javascript">
    $(document).ready(function () {
    $(".edit").click(function() {
@@ -168,7 +167,7 @@ $no_urut = ($page-1) * $rpp;
         });
       });
 </script>
-<!-- Javascript untuk popup modal Alamat Pengiriman--> 
+<!-- javascript buat popup Alamat Pengiriman--> 
 <script type="text/javascript">
    $(document).ready(function () {
    $(".tujuan").click(function() {
@@ -186,7 +185,7 @@ $no_urut = ($page-1) * $rpp;
       });
 </script>
 
-<!-- Javascript untuk popup modal Delete--> 
+<!-- javascript buat popup Delete--> 
 <script type="text/javascript">
     function confirm_modal(delete_url)
     {
