@@ -84,13 +84,16 @@ if ($pesan == "berhasil daftar") {
             Please select books below.
             </div>
             <?php
+// do query berdasarkan kategori atau katalog buku yang dipilih
             @$id_kategori = $_GET['kategori'];
             @$id_katalog = $_GET['katalog'];
             $q_seleksi_buku = mysqli_query($conn, "SELECT * from buku where id_kategori='$id_kategori'");
             $q_seleksi_buku1 = mysqli_query($conn, "SELECT * from buku where id_katalog='$id_katalog'");
             $q_buku = mysqli_query($conn, "SELECT * from buku");
+// nampilin semua buku kalo ga ada kategori yang dipilih
             if ($id_kategori == 0) {
                 while ($buku = mysqli_fetch_array($q_buku)) {
+                    // display produk buku
                     ?>
                     <div class="col-md-3">
                         <div class="tamp_produk" style="border: solid #fff 1px;">
