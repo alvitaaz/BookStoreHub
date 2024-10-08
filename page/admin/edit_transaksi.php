@@ -1,19 +1,18 @@
 <?php
 include "../../db.php";
 
-// Pastikan parameter 'id' dari $_GET telah diset
 $kd = isset($_GET['id']) ? $_GET['id'] : '';
 
-// Jika 'id' sudah diset, jalankan query untuk mendapatkan data transaksi
+// kalo 'id' sudah diset, jalanin query buat daper data transaksi
 if (!empty($kd)) {
     $query = mysqli_query($conn, "SELECT * FROM selesai WHERE kode_beli='$kd'");
     
-    // Periksa apakah ada hasil dari query
+    // meriksa apa ada hasil dari query
     if (mysqli_num_rows($query) > 0) {
         $r = mysqli_fetch_array($query);
         $id_cus = $r['id_cus'];
         
-        // Dapatkan data pelanggan berdasarkan id_cus
+        // getdata pelanggan berdasarkan id_cus
         $query_customer = mysqli_query($conn, "SELECT * FROM customer WHERE id_cus='$id_cus'");
         $data_customer = mysqli_fetch_array($query_customer);
         $nama_customer = isset($data_customer['nama_cus']) ? $data_customer['nama_cus'] : '';
