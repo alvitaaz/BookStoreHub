@@ -1,8 +1,7 @@
 <?php 
-// Sisipkan fungsi paginasi
 include 'pagination1.php';
 
-// Koneksi ke database menggunakan MySQLi
+// Koneksi ke database pake MySQLi
 $conn = mysqli_connect('localhost', 'root', '', 'bookselling');
 
 // Periksa koneksi
@@ -20,7 +19,7 @@ $reload = "buku.php?pagination=true";
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 if ($page <= 0) $page = 1;  
 $tcount = mysqli_num_rows($result);
-$tpages = ($tcount) ? ceil($tcount / $rpp) : 1; // Total halaman, nomor halaman terakhir
+$tpages = ($tcount) ? ceil($tcount / $rpp) : 1; // total halaman, nomor halaman terakhir
 $count = 0;
 $i = ($page - 1) * $rpp;
 $no_urut = ($page - 1) * $rpp;
@@ -86,32 +85,27 @@ $no_urut = ($page - 1) * $rpp;
 </div>
 <div><?php echo paginate_one($reload, $page, $tpages); ?></div>
 
-<!-- Modal Popup untuk Add buku--> 
+<!-- modal Popup untuk Add buku--> 
 <div id="ModalAdd" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <!-- Isi modal -->
 </div>
 
-<!-- Modal Popup untuk Edit--> 
+<!-- modal Popup untuk Edit--> 
 <div id="ModalEdit" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <!-- Isi modal -->
 </div>
 
-<!-- Modal Popup untuk tambah stok--> 
+<!-- modal Popup untuk tambah stok--> 
 <div id="Modaltstok" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <!-- Isi modal -->
 </div>
 
-<!-- Modal Popup untuk Edit stok--> 
+<!-- modal Popup untuk Edit stok--> 
 <div id="ModalEditstok" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <!-- Isi modal -->
 </div>
 
-<!-- Modal Popup untuk delete--> 
+<!-- modal Popup untuk delete--> 
 <div class="modal fade" id="modal_delete">
-    <!-- Isi modal -->
 </div>
 
-<!-- Javascript untuk popup modal Edit--> 
+<!-- javascript ini buat popup modal Edit--> 
 <script type="text/javascript">
     $(document).ready(function () {
         $(".open_modal").click(function(e) {
@@ -129,7 +123,7 @@ $no_urut = ($page - 1) * $rpp;
     });
 </script>
 
-<!-- Javascript untuk popup modal Edit stok--> 
+<!-- Javascript buat Edit stok--> 
 <script type="text/javascript">
     $(document).ready(function () {
         $(".open_modal_stok").click(function(e) {
@@ -164,7 +158,7 @@ $no_urut = ($page - 1) * $rpp;
     });
 </script>
 
-<!-- Javascript untuk popup modal Delete--> 
+<!-- Javascript buat Delete--> 
 <script type="text/javascript">
     function confirm_modal(delete_url)
     {
