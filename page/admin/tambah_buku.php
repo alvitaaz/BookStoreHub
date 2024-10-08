@@ -24,7 +24,7 @@ if($_FILES['gambar']['name']){
 	// if no errors...
 	if(!$_FILES['gambar']['error']){
 
-		// now is the time to modify the future file name and validate the file
+		
 		$new_file_name = strtolower($_FILES['gambar']['tmp_name']); //rename file menjadi huruf kecil
 		if($_FILES['gambar']['size'] > $max_size) //file tidak boleh lebih besar dari ukuran maksimal
 		{
@@ -34,9 +34,9 @@ if($_FILES['gambar']['name']){
 	
 
 
-		// Mengatur format file yang boleh diupload
+		// ngatur format file yang boleh diupload
 		$image_path = pathinfo($_FILES['gambar']['name'],PATHINFO_EXTENSION); //ambil extensi file
-		$extension = strtolower($image_path); //rename extensi file menjadi huruf kecil
+		$extension = strtolower($image_path); //rename extensi file jadi huruf kecil
 
 		if($extension != "jpg" && $extension != "jpeg" && $extension != "png" && $extension != "gif" ) {
 			$valid_file = false;
@@ -55,7 +55,7 @@ if($_FILES['gambar']['name']){
 
 			// simpan ke database
 			mysql_query("INSERT into buku set judul='$judul',id_kategori='$id_kategori',id_katalog='$id_katalog',pengarang='$pengarang',penerbit='$penerbit',hal='$halaman',harga='$harga',deskripsi='$deskripsi',tanggal='$tanggal',gambar='$nama_file_baru'");
-			//memindahkan gambar ke tempat yang kita inginkan
+			//mindahin gambar ke tempat yang kita inginkan
 			move_uploaded_file($_FILES['gambar']['tmp_name'], '../../img/gambar_buku/'.$nama_file_baru);
 			header("location:buku.php");
 		}
