@@ -59,5 +59,9 @@ The **Kedaiku** application uses a database structure designed for efficient man
 ### Conclusion
 With **Kedaiku**, users can easily explore and purchase their favorite books, while admins have full control over inventory, orders, and customers via the web.
 
-![image](https://github.com/user-attachments/assets/cb52456d-0ff2-428d-acb6-64ea3ac3e473)
+![admin](https://github.com/user-attachments/assets/20bbb8b7-b7e9-4587-9f9f-4793ca50cdcb)
+![user](https://github.com/user-attachments/assets/4a6a3dcc-300c-43ef-82ca-5e3cdb6b1d9a)
+![classdiagram](https://github.com/user-attachments/assets/15e3913b-266c-48b5-a7ce-d80601babd62)
+
+
 
