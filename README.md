@@ -52,7 +52,7 @@ The **Kedaiku** application uses a database structure designed for efficient man
 - **superuser**: Stores information of admins or users with full access to the application.
 
 ### Technologies Used
-- **Backend**: Laravel (PHP)
+- **Backend**: PHP
 - **Frontend**: Bootstrap (for responsive design)
 - **Database**: MySQL
 
