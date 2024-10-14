@@ -5,7 +5,7 @@
 ## Key Features
 
 ### For Users:
-- **Browse Books**: Users can view and search various available books by category, title, or author.
+- **Browse Books**: Users can view the various available books by category, title, or author.
 - **Book Details**: Users can view detailed information about a book, including title, author, publisher, number of pages, price, and description.
 - **Shopping Cart**: Users can add books to the cart and proceed to checkout. Users must log in to complete purchases.
 - **Registration and Login**: New users need to register to make purchases and access other features.
